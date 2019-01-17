@@ -13,7 +13,7 @@ You will be able to:
 * Give intuitive justifications for using multilayer neural network designs
 * Explain the terms $dZ, dW, db and da$ in the creation of a neural network
 
-## 1. Why deep representations?
+## Why deep representations?
 
 eg. computer vision:
 - first layer detects edges in pictures
@@ -35,9 +35,9 @@ You can build a smaller but deeper neural network that needs exponentially less 
 
 https://www.coursera.org/learn/neural-networks-deep-learning/lecture/rz9xJ/why-deep-representations
 
-## 2. Deep network notation
+## Deep network notation
 
-### 2.1 An example
+### An example
 
 
 Now let's try to generalize all the notation to get things straight and know the dimensions of all matrices we'll be working with. Let's have a look at this 3-layer network:
@@ -61,7 +61,7 @@ Let's take it one step further. In $ Z^{[2]} = W^{[2]} A^{[1]} +b^{[2]}$
 - $b^{[2]}$ is a (3 x 1)-matrix. Due to broadcasting in python, this matrix will become duplicated into a (3 x 300)-matrix.
 
 
-### 2.2 to generalize this all
+### To generalize this all
 
 $W^{[l]}: (n^{[l]}, n^{[l-1]})$
 
@@ -78,12 +78,12 @@ $ Z^{[l]}, A^{[l]}: (n^{[l]}, m)$
 $ dZ^{[l]}, dA^{[l]}: (n^{[l]}, m)$
 
 
-### 2.3 Forward propagation
+### Forward propagation
 
 - Input is $a^{[l-1]}$
 - Output $a^{[l]}$, save $z^{[l]}, w^{[l]}, b^{[l]}, a^{[l-1]} $
 
-#### 2.3.1 for one sample
+#### for one sample
 
 $ z^{[l]}= W^{[l]} a^{[l-1]} + b^{[l]}$
 
@@ -91,7 +91,7 @@ $ a^{[l]}= g^{[l]} ( z^{[l]})$
 
 here, $ a^{[l]}, z^{[l]}: (n^{[l]}, 1)$
 
-#### 2.3.2 vectorized
+#### vectorized representation
 
 vectorized, otherwise small z and small a (if one sample at a time), otherwise the capitals are used.
 
@@ -101,12 +101,12 @@ $ A^{[l]}= g^{[l]} ( Z^{[l]})$
 
 here, $ Z^{[l]}, A^{[l]}: (n^{[l]}, m)$
 
-### 2.4 Backward propagation
+### Backward propagation
 
 - Input $da ^{[l]}$
 - Output $da^{[l-1]}$, $dW^{[l]}, db^{[l]}$
 
-#### 2.4.1 for one sample
+#### for one sample
 
 $ dz^{[l]}= da ^{[l]} * g^{[l]'} ( z^{[l]})$
 
@@ -119,7 +119,7 @@ $ da^{[l-1]} = W^{[l]T}*dz^{[l]}$
 
 
 
-#### 2.4.2 vectorized
+#### vectorized representation
 
 $ dZ^{[l]}= dA ^{[l]} * g^{[l]'} (Z^{[l]})$
 
@@ -130,6 +130,6 @@ $ db^{[l]} = \dfrac{1}{m} np.sum(dZ^{[l]}, axis=1, keepdims=True)$
 $ dA^{[l-1]} = W^{[l]T}*dZ^{[l]}$
 
 
-# Summary
+## Summary
 
 In this brief lesson, we gave an intuitive justification behind using deep network structures and reviewed the architecture for neural nets in general. In upcoming lessons, we will begin to extend our previous work in creating a single layer neural network in order to build a deeper more powerful model.
