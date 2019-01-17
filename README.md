@@ -11,7 +11,7 @@ The previous two labs have given you quite some insight on how neural networks w
 You will be able to:
 
 * Give intuitive justifications for using multilayer neural network designs
-* Explain the terms $dZ, dW, db and da$ in the creation of a neural network
+* Explain the terms $dZ, dW, db$ and $da$ in the creation of a neural network
 
 ## Why deep representations?
 
