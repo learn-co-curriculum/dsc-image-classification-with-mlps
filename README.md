@@ -144,6 +144,6 @@ After forward propogation is completed and the cost function is evaluated, backp
 
 https://www.coursera.org/learn/neural-networks-deep-learning/lecture/rz9xJ/why-deep-representations
 
-# Summary
+## Summary
 
 In this brief lesson, we gave an intuitive justification behind using deep network structures and reviewed the architecture for neural nets in general. In upcoming lessons, we will begin to extend our previous work in creating a single layer neural network in order to build a deeper more powerful model.
