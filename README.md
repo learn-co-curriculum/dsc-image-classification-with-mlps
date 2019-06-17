@@ -1,5 +1,5 @@
 
-# Deep Networks
+# Image Classification With Multi-Layer Perceptrons
 
 ## Introduction
 
@@ -15,7 +15,7 @@ You will be able to:
 
 ## Why deep representations?
 
-Deep representation are really good at automating what used to be a tedious process of feature engineering. Not only would modelers need to have complex programming and analytical skills, they would also often require domain knowledge in order to manually build features that would then be passed on to a regression or classification algorithm. With deep representations, this time consuming process is often severly diminished. 
+Deep representation are really good at automating what used to be a tedious process of feature engineering. Not only would modelers need to have complex programming and analytical skills, they would also often require domain knowledge in order to manually build features that would then be passed on to a regression or classification algorithm. With deep representations, this time consuming process is often severely diminished. 
 
 For example, the deep layers of a neural network for computer might look like this:
 
@@ -32,7 +32,7 @@ or in the case of audio:
 - fourth: sentence recognition
 -...
 
-The general idea is shallow networks detect "simple" things, and the deeper you go, the more comples things can be detected. 
+The general idea is shallow networks detect "simple" things, and the deeper you go, the more complex things can be detected. 
 
 You can build a smaller but deeper neural network that needs exponentially less hidden units but performs better, because learning happens in each layer!
 
@@ -97,9 +97,9 @@ Recall that deep networks work by performing forward propagation; evaluating a c
 - Input is $a^{[l-1]}$
 - Output $a^{[l]}$, save $z^{[l]}, w^{[l]}, b^{[l]}, a^{[l-1]} $
 
-Here's some more details about how the forward propogation calculation is performed:  
+Here's some more details about how the forward propagation calculation is performed:  
 
-$Z^1$ is the output of the linear transformation of the initial input $A^1$ (the observations). In successive layers, $A^l$ is the output from the previous hidden layer. In all of these cases, $W^l$ is a matrix of weights to be optimized minimize the cost function. $b^l$ is also optimized but is a vector as opposed to a matrix.  
+$Z^1$ is the output of the linear transformation of the initial input $A^1$ (the observations). In successive layers, $A^l$ is the output from the previous hidden layer. In all of these cases, $W^l$ is a matrix of weights to be optimized to minimize the cost function. $b^l$ is also optimized but is a vector as opposed to a matrix.  
 
 $g^l$ is the activation function which takes the output of this linear transformation and yields the input to the next hidden layer.  
 
@@ -113,13 +113,13 @@ here, $ Z^{[l]}, A^{[l]}$ both have a shape of $(n^{[l]}, m)$
 
 ## Backward Propagation
 
-Once an output for the neural network given the current parameter weights has been calculated, we must back propogate to calculate the gradients of layer parameters with respect to the cost function. This will allow us to apply an optimization algorithm such as gradient descent in order to make small adjustments to the parameters in order to minimize our cost (and improve our predictions).
+Once an output for the neural network given the current parameter weights has been calculated, we must back propagate to calculate the gradients of layer parameters with respect to the cost function. This will allow us to apply an optimization algorithm such as gradient descent in order to make small adjustments to the parameters in order to minimize our cost (and improve our predictions).
 
 
 - Input $da ^{[l]}$
 - Output $da^{[l-1]}$, $dW^{[l]}, db^{[l]}$
 
-In terms of formula's, the gradients for our respective parameters in each activiation layer are given by:
+In terms of formulas, the gradients for our respective parameters in each activation layer are given by:
 
 $ dZ^{[l]}= dA ^{[l]} * g^{[l]'} (Z^{[l]})$
 
@@ -134,11 +134,11 @@ $ dA^{[l-1]} = W^{[l]T}*dZ^{[l]}$
 
 To summarize the process once more, we begin by defining a model architecture which includes the number of hidden layers, activation functions (sigmoid or relu) and the number of units in each of these.   
 
-We then initialize parameters for each of these layers (typically randomly). After the initial parameters are set, forward propagation evaluates the model giving a prediction, which is then used to evaluate a cost function. Forward propogation involves evaluating each layer and then piping this output into the next layer. 
+We then initialize parameters for each of these layers (typically randomly). After the initial parameters are set, forward propagation evaluates the model giving a prediction, which is then used to evaluate a cost function. Forward propagation involves evaluating each layer and then piping this output into the next layer. 
 
 Each layer consists of a linear transformation and an activation function.  The parameters for the linear transformation in **each** layer include $W^l$ and $b^l$. The output of this linear transformation is represented by $Z^l$. This is then fed through the activation function (again, for each layer) giving us an output $A^l$ which is the input for the next layer of the model.  
 
-After forward propogation is completed and the cost function is evaluated, backpropogation is used to calculate gradients of the initial parameters with respect to this cost function. Finally, these gradients are then used in an optimization algorithm, such as gradient descent, to make small adjustments to the parameters and the entire process of forward propogation, back propogation and parameter adjustments is repeated until the modeller is satisfied with the results.
+After forward propagation is completed and the cost function is evaluated, back propogation is used to calculate gradients of the initial parameters with respect to this cost function. Finally, these gradients are then used in an optimization algorithm, such as gradient descent, to make small adjustments to the parameters and the entire process of forward propagation, back propagation and parameter adjustments is repeated until the modeller is satisfied with the results.
 
 ## Additional Resources
 
