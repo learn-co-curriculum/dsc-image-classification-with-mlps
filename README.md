@@ -41,7 +41,7 @@ You can build a smaller but deeper neural network that needs exponentially less 
 
 Let's try to generalize all the notation to get things straight and know the dimensions of all matrices we'll be working with. Let's have a look at this 3-layer network:
 
-![title](images/Deeper_network_Day2.png)
+![title](images/deep_netw_2.png)
 
 Imagine that there are 300 cases, or observations (m = 300). What do our matrices look like? 
 
