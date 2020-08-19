@@ -30,7 +30,7 @@ or in the case of audio:
 - second layer: basic units of sounds, "phonemes" 
 - third: word recognition
 - fourth: sentence recognition
--...
+- ...
 
 The general idea is shallow networks detect "simple" things, and the deeper you go, the more complex things can be detected. 
 
@@ -105,11 +105,12 @@ Here's some more details about how the forward propagation calculation is perfor
 
 Mathematically we have:
 
- <img src="https://render.githubusercontent.com/render/math?math=Z^{[l]}= W^{[l]} A^{[l-1]} %2b b^{[l]}"> 
+<img src="https://render.githubusercontent.com/render/math?math=Z^{[l]}= W^{[l]} A^{[l-1]} %2b b^{[l]}"> 
+<br>
+<img src="https://render.githubusercontent.com/render/math?math=A^{[l]}= g^{[l]} ( Z^{[l]})"> 
 
- <img src="https://render.githubusercontent.com/render/math?math=A^{[l]}= g^{[l]} ( Z^{[l]})"> 
 
-here,  <img src="https://render.githubusercontent.com/render/math?math=Z^{[l]}, A^{[l]}"> both have a shape of  <img src="https://render.githubusercontent.com/render/math?math=(n^{[l]}, m)"> 
+Here,  <img src="https://render.githubusercontent.com/render/math?math=Z^{[l]}, A^{[l]}"> both have a shape of  <img src="https://render.githubusercontent.com/render/math?math=(n^{[l]}, m)"> 
 
 ## Backward Propagation
 
@@ -122,11 +123,11 @@ Once an output for the neural network given the current parameter weights has be
 In terms of formulas, the gradients for our respective parameters in each activation layer are given by:
 
  <img src="https://render.githubusercontent.com/render/math?math=dZ^{[l]}= dA ^{[l]} * g^{[l]'} (Z^{[l]})"> 
-
+<br>
  <img src="https://render.githubusercontent.com/render/math?math=dW^{[l]} = \dfrac{1}{m} dZ^{[l]}* A^{[l-1]T}"> 
-
+<br>
  <img src="https://render.githubusercontent.com/render/math?math=db^{[l]} = \dfrac{1}{m} np.sum(dZ^{[l]}, axis=1, keepdims=True)"> 
-
+<br>
  <img src="https://render.githubusercontent.com/render/math?math=dA^{[l-1]} = W^{[l]T}*dZ^{[l]}"> 
 
 
