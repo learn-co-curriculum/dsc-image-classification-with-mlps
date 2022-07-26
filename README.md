@@ -1,4 +1,3 @@
-
 # Image Classification with Multi-Layer Perceptrons
 
 ## Introduction
@@ -41,7 +40,7 @@ You can build a smaller but deeper neural network that needs exponentially less 
 
 Let's try to generalize all the notation to get things straight and know the dimensions of all matrices we'll be working with. Let's have a look at this 3-layer network:
 
-<img src="images/new_classwmips.png" width=800>
+<img src="https://raw.githubusercontent.com/learn-co-curriculum/dsc-image-classification-with-mlps/master/images/new_classwmips.png" alt="neural network with input layer, first hidden layer, second hidden layer, output layer" width=800>
 
 Imagine that there are 300 cases, or observations (m = 300). What do our matrices look like? 
 
