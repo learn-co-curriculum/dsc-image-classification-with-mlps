@@ -139,10 +139,6 @@ Each layer consists of a linear transformation and an activation function. The p
 
 After forward propagation is completed and the cost function is evaluated, back propogation is used to calculate gradients of the initial parameters with respect to this cost function. Finally, these gradients are then used in an optimization algorithm, such as gradient descent, to make small adjustments to the parameters and the entire process of forward propagation, back propagation, and parameter adjustments is repeated until the modeller is satisfied with the results.
 
-## Additional Resources
-
-https://www.coursera.org/learn/neural-networks-deep-learning/lecture/rz9xJ/why-deep-representations
-
 ## Summary
 
 In this brief lesson, we gave an intuitive justification behind using deep network structures and reviewed the architecture for neural nets in general. In upcoming lessons, we will begin to extend our previous work in creating a single layer neural network in order to build a deeper more powerful model.
